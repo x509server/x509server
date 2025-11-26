@@ -10,3 +10,52 @@
 x509server/x509server is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+/*
+  Reading a serial ASCII-encoded string.
+
+  This sketch demonstrates the Serial parseInt() function.
+  It looks for an ASCII string of comma-separated values.
+  It parses them into ints, and uses those to fade an RGB LED.
+
+  Circuit: Common-Cathode RGB LED wired like so:
+  - red anode: digital pin 3
+  - green anode: digital pin 5
+  - blue anode: digital pin 6
+  - cathode: GND
+
+  created 13 Apr 2012
+  by Tom Igoe
+  modified 14 Mar 2016
+  by Arturo Guadalupi
+
+  This example code is in the public domain.
+*/
+
+// pins for the LEDs:
+const int redPin = 3;
+const int greenPin = 5;
+const int bluePin = 6;
+
+void setup() {
+  // initialize serial:Serial.begin(9600);
+  // make the pins outputs:
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+
+}
+
+void loop() {
+  // if there's any serial available, read it:Serial.available() > 0) {
+
+    // look for the next valid integer in the incoming serial stream:.parseInt();
+    // do it again:Serial.parseInt();
+    // do it again:Serial.parseInt();
+
+    // look for the newline. That's the end of your sentence:Serial.read() == '\n') {
+      // constrain the values to 0 - 255 and invert
+      // if you're using a common-cathode LED, just use "constrain(color, 0, 255);"red = 255 - constrain(red, 0, 255);green = 255 - constrain(green, 0, 255);blue = 255 - constrain(blue, 0, 255);
+
+      // fade the red, green, and blue legs of the LED:red);green);blue);
+
+      // print the three numbers in one string as hexadecimal:Serial.print(red, HEX);Serial.print(green, HEX);Serial.println(blue, HEX);python #จำลองฐานข้อมูลรูปแบบ: (ชื่อ, อีเมล,  ประเภทลูกค้า, รับ SMS หรือไม่)) customers_data = [ ("สมชาย", "somchai@example.com", "ทั่วไป", True), ("สมหญิง", "somying@example.com", "สมาชิก VIP", False), ("จอห์น", "john@example.com", "ทั่วไป", True), ("แอนนา", "anna@example.com", "สมาชิก VIP", True), ] def send_promotion_notifications(promotion_name, discount_rate): """จำลองกระบวนการส่งแจ้งเตือนโปรโมชัน""" print(f"--- เริ่มแคมเปญโปรโมชัน: {promotion_name} ส่วนลด {discount_rate}% ---") for name, email, customer_type, receive_sms in customers_data: message = "" # การแบ่งกลุ่มและปรับแต่งข้อความ (Segmentation & Personalization) if customer_type == "สมาชิก VIP": # ลูกค้า VIP ได้รับส่วนลดเพิ่มพิเศษ vip_discount = discount_rate + 10 message = f"สวัสดีคุณ {name} สมาชิก VIP! รับส่วนลดพิเศษ {vip_discount}% สำหรับ {promotion_name} คลิกเลย!" else: message = f"สวัสดีคุณ {name}! โปรโมชันใหม่ {promotion_name} ลด {discount_rate}% ช้อปเลย!" # เลือกช่องทางการสื่อสาร print(f"[อีเมล] ส่งถึง {email}: {message}") if receive_sms: print(f"[SMS] ส่งถึง {name}: {message[:100]}...") # ตัดข้อความ SMS ให้สั้นลง print("--- สิ้นสุดการส่งแจ้งเตือน ---") #[เรียกใช้งานฟังก์ชันแจ้งโปรโมชัน] send_promotion_notifications
